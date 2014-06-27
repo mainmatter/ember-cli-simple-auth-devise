@@ -25,9 +25,11 @@ EmberCLISimpleAuthDevise.prototype.included = function included(app) {
   this.app = app;
 
   this.app.import('vendor/ember-simple-auth/simple-auth-devise.amd.js', {
-    'simple-auth-devise/authenticators/devise': ['default'],
-    'simple-auth-devise/authorizers/devise':    ['default'],
-    'simple-auth-devise/initializer':           ['default']
+    exports: {
+      'simple-auth-devise/authenticators/devise': ['default'],
+      'simple-auth-devise/authorizers/devise':    ['default'],
+      'simple-auth-devise/initializer':           ['default']
+    }
   });
 };
 
