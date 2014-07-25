@@ -2,7 +2,7 @@
   "name": "ember-cli-simple-auth-devise",
   "author": "Marco Otte-Witte",
   "license": "MIT",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "description": "Include the Ember Simple Auth devise extension library into an Ember CLI application.",
   "main": "index.js",
   "scripts": {

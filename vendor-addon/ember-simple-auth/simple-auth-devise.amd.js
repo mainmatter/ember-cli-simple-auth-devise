@@ -1,3 +1,13 @@
+(function(global) {
+  var define = global.define;
+  var require = global.require;
+  var Ember = global.Ember;
+  if (typeof Ember === 'undefined' && typeof require !== 'undefined') {
+    Ember = require('ember');
+  }
+
+Ember.libraries.register('Ember Simple Auth Devise', '0.6.4');
+
 define("simple-auth-devise/authenticators/devise", 
   ["simple-auth/authenticators/base","simple-auth/utils/is-secure-url","simple-auth/utils/get-global-config","exports"],
   function(__dependency1__, __dependency2__, __dependency3__, __exports__) {
@@ -5,9 +15,6 @@ define("simple-auth-devise/authenticators/devise",
     var Base = __dependency1__["default"];
     var isSecureUrl = __dependency2__["default"];
     var getGlobalConfig = __dependency3__["default"];
-
-    var global = (typeof window !== 'undefined') ? window : {},
-        Ember = global.Ember;
 
     /**
       Authenticator that works with the Ruby gem
@@ -163,9 +170,6 @@ define("simple-auth-devise/authorizers/devise",
     var Base = __dependency1__["default"];
     var isSecureUrl = __dependency2__["default"];
 
-    var global = (typeof window !== 'undefined') ? window : {},
-        Ember = global.Ember;
-
     /**
       Authenticator that works with the Ruby gem
       [Devise](https://github.com/plataformatec/devise) by sending the `user_token`
@@ -214,9 +218,6 @@ define("simple-auth-devise/ember",
   ["./initializer"],
   function(__dependency1__) {
     "use strict";
-    var global = (typeof window !== 'undefined') ? window : {},
-        Ember = global.Ember;
-
     var initializer = __dependency1__["default"];
 
     Ember.onLoad('Ember.Application', function(Application) {
@@ -227,9 +228,6 @@ define("simple-auth-devise/initializer",
   ["simple-auth-devise/authenticators/devise","simple-auth-devise/authorizers/devise","exports"],
   function(__dependency1__, __dependency2__, __exports__) {
     "use strict";
-    var global = (typeof window !== 'undefined') ? window : {},
-        Ember = global.Ember;
-
     var Authenticator = __dependency1__["default"];
     var Authorizer = __dependency2__["default"];
 
@@ -242,3 +240,4 @@ define("simple-auth-devise/initializer",
       }
     };
   });
+})((typeof global !== 'undefined') ? global : window);
