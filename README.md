@@ -6,7 +6,13 @@ Addon.
 
 ## Installation
 
-To install simply run
+To install first run to get the base dependencies
+
+```
+npm install --save-dev ember-cli-simple-auth
+```
+
+Then install the package
 
 ```
 npm install --save-dev ember-cli-simple-auth-devise
