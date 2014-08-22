@@ -9,7 +9,7 @@ Addon.
 To install simply run
 
 ```
-npm install --save-dev ember-cli-simple-auth-devise
+npm install --save-dev ember-cli-simple-auth ember-cli-simple-auth-devise
 ```
 
 in your Ember CLI project's root.
