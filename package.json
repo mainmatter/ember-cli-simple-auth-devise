@@ -8,6 +8,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "ember-addon": {
+    "main": "index"
+  },
   "keywords": [
     "ember-addon"
   ],
@@ -22,6 +25,6 @@
   },
   "homepage": "https://github.com/simplabs/ember-cli-simple-auth-devise",
   "dependencies": {
-    "ember-cli-simple-auth": "0.6.4-1"
+    "ember-cli-simple-auth": "git://github.com/simplabs/ember-cli-simple-auth.git#next"
   }
 }
