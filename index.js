@@ -4,7 +4,7 @@ module.exports = {
   included: function(app) {
     this._super.included(app);
 
-    this.app.import('vendor/ember-simple-auth/simple-auth-devise.amd.js', {
+    this.app.import('bower_components/ember-simple-auth/simple-auth-devise.amd.js', {
       exports: {
         'simple-auth-devise/authenticators/devise': ['default'],
         'simple-auth-devise/authorizers/devise':    ['default'],
