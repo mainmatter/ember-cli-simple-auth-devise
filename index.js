@@ -1,36 +1,15 @@
-var path = require('path');
-var fs   = require('fs');
+module.exports = {
+  name: 'Ember CLI Simple Auth Devise',
 
-function EmberCLISimpleAuthDevise(project) {
-  this.project = project;
-  this.name    = 'Ember CLI Simple Auth Devise';
-}
+  included: function(app) {
+    this._super.included(app);
 
-function unwatchedTree(dir) {
-  return {
-    read:    function() { return dir; },
-    cleanup: function() { }
-  };
-}
-
-EmberCLISimpleAuthDevise.prototype.treeFor = function included(name) {
-  var treePath = path.join('node_modules/ember-cli-simple-auth-devise', name + '-addon');
-
-  if (fs.existsSync(treePath)) {
-    return unwatchedTree(treePath);
+    this.app.import(app.bowerDirectory + '/ember-simple-auth/simple-auth-devise.amd.js', {
+      exports: {
+        'simple-auth-devise/authenticators/devise': ['default'],
+        'simple-auth-devise/authorizers/devise':    ['default'],
+        'simple-auth-devise/initializer':           ['default']
+      }
+    });
   }
-};
-
-EmberCLISimpleAuthDevise.prototype.included = function included(app) {
-  this.app = app;
-
-  this.app.import('vendor/ember-simple-auth/simple-auth-devise.amd.js', {
-    exports: {
-      'simple-auth-devise/authenticators/devise': ['default'],
-      'simple-auth-devise/authorizers/devise':    ['default'],
-      'simple-auth-devise/initializer':           ['default']
-    }
-  });
-};
-
-module.exports = EmberCLISimpleAuthDevise;
+}

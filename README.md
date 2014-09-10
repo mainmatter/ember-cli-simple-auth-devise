@@ -6,10 +6,13 @@ Addon.
 
 ## Installation
 
+**Ember Simple Auth Devise requires at least Ember CLI 0.0.42.**
+
 To install simply run
 
 ```
-npm install --save-dev ember-cli-simple-auth ember-cli-simple-auth-devise
+npm install --save-dev ember-cli-simple-auth-devise
+ember generate ember-cli-simple-auth-devise
 ```
 
 in your Ember CLI project's root.
