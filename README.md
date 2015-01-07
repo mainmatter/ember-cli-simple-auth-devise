@@ -15,6 +15,10 @@ npm install --save-dev ember-cli-simple-auth-devise
 ember generate ember-cli-simple-auth-devise
 ```
 
+As of Ember CLI 0.1.5, you can run the following command instead:
+
+`ember install:addon ember-cli-simple-auth-devise`
+
 in your Ember CLI project's root.
 
 ### Configuration
