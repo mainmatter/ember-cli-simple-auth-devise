@@ -11,6 +11,7 @@ Addon.
 To install simply run
 
 ```
+ember install:addon ember-cli-simple-auth
 ember install:addon ember-cli-simple-auth-devise
 ```
 
